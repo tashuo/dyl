@@ -1,0 +1,74 @@
+<include file="Public/header_in" title="个人中心"/>
+
+<!-- 页面主体 Start-->
+<div class="container">
+  <div class="row">
+    <!-- 左侧主体 Start-->
+    <div class="col-xs-12 col-sm-6 col-md-8">
+        <div class="page-header">
+          <h1>Do Your LOVE 
+                <small>
+                  <?=$_SESSION['login_user'];?>
+                </small>
+                <?php
+                  // if(!isset($_SESSION['register_prove_tip'])){
+                  //   echo '<a class="btn btn-warning btn-sm pull-right" data-toggle="modal" data-target="#myModal">消息提示</a>';
+                  // }
+                ?>
+          </h1>
+        </div>
+
+
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" placeholder="发表此刻的心情" name="feed" />
+          <span class="input-group-addon btn glyphicon glyphicon-send"> 发表</span>
+        </div>
+
+        <br />
+        <foreach name="blogList" item="v" key="k">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-toggle="collapse" href="#{$k}">{$v.subject}</a>
+              </h4>
+            </div>
+            <div id="{$k}" class="panel-collapse collapse">
+              <div class="panel-body">{$v.content}</div>
+            </div>
+          </div>
+        </foreach>
+
+          <!--页码 Start-->
+          <!-- 分页 Start-->
+          <div class="text-center">
+            {$page}
+          </div>
+          <!--分页 End-->
+          <!--页码 End-->
+    </div>
+    <!-- 左侧主体 End-->
+
+    <!-- 右侧主体 Start-->
+    <div class="col-xs-6 col-md-4">
+      <h2>Side Bar</h2>
+      <br />
+      <p>每日一句:</p>
+        <blockquote class="pull-right">
+          <p>what the fuck</p>
+          <small>赠于 2014.01.04, <cite title="fuck">这是啥</cite></small>
+        </blockquote>
+    </div>
+    <!-- 右侧主体 End-->
+
+    </div> 
+</div>
+
+
+
+<!-- 邀请提示 -->
+<eq name="completeInvite" value="1">
+  <include file="Public/inviteTip" />
+</else>
+</eq>
+
+<include file="Public/footer" />

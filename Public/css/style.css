@@ -1,0 +1,198 @@
+@CHARSET "UTF-8";
+
+/*增加bootstrap默认body样式的padding，实现固定到顶部且不遮挡到下面元素*/
+body{
+	padding-top: 70px;
+}
+
+/*下面的css样式将覆盖掉bootstrap默认的隐藏dt超出部分内容的样式*/
+.dl-horizontal dt{
+	width: 170px;
+	white-space: normal;
+}
+
+
+/**********************blog页面布局 Start********************/
+.blog_list .title{
+  border-bottom: 1px solid #E5E5E5;
+  padding-bottom: 20px;
+}
+.blog{
+  padding:5px;
+  margin-bottom: 5px;
+}
+.blog_date{
+  padding-top: 10px;
+}
+.blog_date small{
+  color: #99CCCC;
+  background-color: #eaf6f7;
+}
+.blog_title{
+  padding: 5px;
+  padding-top: 0;
+}
+.blog_content{
+  padding: 15px;
+}
+.blog_separate{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: url("http://x.srcdd.com/farm1/90ecce/9e798e98/AC659.png") no-repeat scroll bottom #DEF0EF;
+}
+.blog_list a{
+  color: #699;
+}
+.hot{
+  font-weight: normal;
+  color: #777;
+}
+.blog_meta{
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+
+.blogDetail .title{
+  padding: 20px;
+  padding-top: 0px;
+  /*margin-bottom: 20px;*/
+}
+
+.blogDetail .content{
+  padding: 15px;
+}
+
+.pageTip{
+  margin-top: 20px;
+}
+/**********************blog页面布局 End********************/
+
+
+/**********************street页面瀑布流加载布局 Start*******************/
+#masonry{
+  padding: 0;
+  min-height: 450px;
+  margin: 0 auto;
+}
+
+#masonry .thumbnail{
+  width: 330px;
+  margin: 15px;
+  padding: 0;
+}
+/**********************street页面瀑布流加载布局 End*******************/
+
+
+
+/**********************about页面 Start***********************/
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar .affix {
+  /*position: static;*/
+}
+
+/* First level of nav */
+.bs-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a {
+  display: block;
+  color: #716b7a;
+  padding: 5px 20px;
+}
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+  /*
+  text-decoration: none;
+  background-color: #e5e3e9;
+  border-right: 1px solid #dbd8e0;
+  */
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+  .bs-sidebar .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .bs-sidebar.affix,
+  .bs-sidebar.affix-bottom {
+    width: 213px;
+  }
+  
+  .bs-sidebar.affix {
+    /*position: fixed;  Undo the static from mobile first approach */
+    /*top: 80px;*/
+  }
+  .bs-sidebar.affix-bottom {
+    /*position: absolute;  Undo the static from mobile first approach */
+  }
+  .bs-sidebar.affix-bottom .bs-sidenav,
+  .bs-sidebar.affix .bs-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .bs-sidebar.affix-bottom,
+  .bs-sidebar.affix {
+    width: 263px;
+  }
+}
+
+/* Space things out */
+.bs-docs-section + .bs-docs-section {
+  padding-top: 40px;
+}
+
+/* Janky fix for preventing navbar from overlapping */
+h1[id] {
+  padding-top: 80px;
+  margin-top: -45px;
+}
+/**********************about页面 End***********************/
+
+
+.first_ul li{
+    margin-left: 10px;
+}
+
+
+/***********************登录注册界面**************************/
+#loginForm{
+  margin-top: 20px;
+}
+
+#registerForm{
+  margin-top: 20px;
+}
+
+.submitBtn a{
+  margin-left: 20px;
+}
+
+
+
+/*页面底部布局*/
+.about-footer{
+    border-top: 1px solid #E5E5E5;
+    color: #777777;
+    margin-top: 100px;
+    padding-bottom: 30px;
+    padding-top: 40px;
+}
+
+.warnning-border{
+  border-color: #843534;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}

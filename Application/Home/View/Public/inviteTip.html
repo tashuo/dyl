@@ -1,0 +1,30 @@
+<!--邀请提示窗-->
+<div class="modal fade" id="inviteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title text-center" id="myModalLabel">欢迎注册来到DoyourLove</h3>
+      </div>
+      <div class="modal-body">
+        <h4><strong>注意事项:</strong></h4>
+        <h5>1、邀请女朋友注册前必须先完成"爱巢"页面的信息;</h5>
+        <h5>2、第一条完善后通过生成唯一的邀请码来邀请女友;</h5>
+        <h5>3、了解DoyourLove,可以访问<a href="{:U('Home/index')}">这里</a></h5>
+        <h5>4、旅途愉快.</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a type="button" class="btn btn-primary" href="{:U('Home/build')}">完善信息</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+
+<script type="text/javascript">
+  //邀请模态框
+  $('#inviteModal').modal();
+</script>
+
+<!--清除提醒邀请的cookie，保证只弹出一次-->
+{:cookie('login_completeTip', 0)}

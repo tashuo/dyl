@@ -1,0 +1,63 @@
+<include file="Public/header_in" title="建造爱巢ing..."/>
+
+<div class="container">
+<!-- 页面主体 Start-->
+  <form class="form-horizontal" id="voteForm" role="form" method="post" action="{:U('Post/index')}">
+        <div class="form-group">
+          <label for="projectTitle" class="col-sm-2 control-label">对方爱称</label>
+          <div class="col-sm-5">
+            <!-- <div class="has-error"> -->
+            <input type="text" class="form-control require" name="projectTitle" id="projectTitle" placeholder="爱称">
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="startDate" class="col-sm-2 control-label">相遇时间</label>
+              <div class="col-sm-5" id="RangeDate">
+                <div class="input-daterange input-group">
+                            <input type="text" class="form-control require" id="startDate" name="startDate" />
+                    </div>
+                  </div>
+        </div>
+        <div class="form-group">
+        <label for="startDate" class="col-sm-2 control-label">相恋时间</label>
+              <div class="col-sm-5" id="RangeDate">
+                <div class="input-daterange input-group">
+                            <input type="text" class="form-control require" id="startDate" name="startDate" />
+                    </div>
+                  </div>
+        </div>
+        <div class="form-group">
+        <label for="startDate" class="col-sm-2 control-label">她的生日</label>
+              <div class="col-sm-5" id="RangeDate">
+                <div class="input-daterange input-group">
+                            <input type="text" class="form-control require" id="startDate" name="startDate" />
+                    </div>
+                  </div>
+        </div>
+
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">是否允许查看结果</label>
+          <div class="col-sm-5">
+              <label class="radio-inline">
+                <input type="radio" name="seeAble" value="1" checked="checked">允许
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="seeAble" value="0">不允许
+              </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+        <label for="startDate" class="col-sm-2 control-label btn btn-info">生成........邀请........链接...</label>
+              <div class="col-sm-5" id="RangeDate">
+                <div class="input-daterange input-group">
+                            <input type="text" class="form-control require" id="startDate" name="startDate" />
+                    </div>
+                  </div>
+        </div>
+  </form>
+</div>
+<!-- 页面主体 end-->
+
+<include file="Public/footer" />

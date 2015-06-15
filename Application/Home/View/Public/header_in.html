@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[title]--dyl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="__ROOT__/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__ROOT__/css/flipclock.css">
+    <link rel="stylesheet" href="__ROOT__/css/style.css">
+    <script src="__ROOT__/js/jquery-1.8.2.min.js"></script>
+    <script src="__ROOT__/bootstrap/js/bootstrap.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+<!-- 导航栏 Start -->
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">Doyourlove</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav first_ul">
+      <li><a href="./street">街道</a></li>
+      <li><a href="./yard">庭院</a></li>
+      <li><a href="./home">爱巢</a></li>
+      <li class="{$meClass}"><a href="{:U('Me/index')}">我</a></li>
+      <li><a href="./ta">我的他/她</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{:U('Index/index')}">关于Doyourlove</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{:session('login_username')}<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="">消息中心  
+                <if condition="session('login_reminds') gt 0">
+                  <span class="badge">{:session('login_reminds')}</span>
+                </if>
+                </a>
+          </li>
+          <li><a href="{:U('Index/logout')}">退出</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  </div><!-- /.navbar-collapse -->
+</header>
+<!-- 导航栏 End-->
+
+<div class="container">
+	<div class="rows">

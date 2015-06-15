@@ -1,0 +1,41 @@
+<include file="Public/header_out" title="日志" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+      <div class="title">
+        <h1 class="text-center">Doyourlove日记</h1>
+      </div>
+      <div class="blog_list">
+        <foreach name="blogList" item="v">
+          <div class="blog">
+            <div class="blog_date">
+              <p class="text-center"><small>{$v.dateline|date='d, M',###}</small></p>
+            </div>
+            <div class="blog_title">
+              <h2 class="text-center"><a href="{:U('Blog/detail', 'blogId='.$v[id])}">{$v.subject}</a></h2>
+            </div>
+            <div class="blog_content">
+              {$v.content|mb_substr=0,500,'UTF-8'} ......
+            </div>
+            <div class="blog-bottom">
+              <div class="blog_meta">
+               <p><a href="{:U('Blog/detail', 'blogId='.$v[id])}"  class="pull-left">阅读原文</a><span  class="pull-right hot"> 热度({$v.views})</a></p>
+              </div>
+              <br/>
+              <div class="blog_separate">&nbsp;</div>
+            </div>
+          </div>
+        </foreach>
+      </div>
+      <!--博客列表 End-->
+      <!-- 分页 Start-->
+      <div class="text-center">
+        {$page}
+      </div>
+      <!--分页 End-->
+    </div>
+  </div>
+</div>
+
+<include file="Public/footer" />

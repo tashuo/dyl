@@ -1,0 +1,28 @@
+<include file="Public/header" />
+
+<div class="container">
+    <div class="row">
+    	<div class="col-md-12">
+	    <ul class="nav nav-tabs" role="tablist">
+    		<li role="presentation" class="{$blogListClass}"><a href="{:U('Blog/index')}">博客列表</a></li>
+		<li role="presentation" class="{$blogAddClass}"><a href="{:U('Blog/add')}">写博客</a></li>
+	    </ul>
+	    <div class="editor">
+	    	<form role="form" id="blogPostForm" method="post" idAttr="{:U('Post/index')}">
+	    		<input type="text" name="subject" id="subject" class="form-control" placeholder="请输入文章标题" >
+	    		<br/> 
+	    		<textarea name="content" id="ckeditor" rows="10" cols="80">文章内容</textarea>
+	    		<br/>
+	    	</form>
+	    	<button class="btn btn-primary btn-lg" id="postBlog">发表</button>
+	    	<button class="btn btn-info btn-lg" id="saveBlog">保存到草稿箱</button>
+	    </div>
+    	</div>
+    </div>
+</div>
+
+<script src="//cdn.ckeditor.com/4.4.4/basic/ckeditor.js"></script>
+<script type="text/javascript">
+	CKEDITOR.replace('ckeditor')
+</script>
+<include file="Public/footer" />

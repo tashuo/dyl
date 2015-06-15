@@ -1,0 +1,44 @@
+<include file="Public/header_out" />
+
+<div class="container">
+    <div class="row">
+    	<div class="col-md-8 col-md-offset-2">
+    		<div align="center" class="alert alert-success" id="loginInfo">
+    			<p>欢迎登陆dyl</p>
+    		</div>
+    		<form class="form-horizontal alert alert-info" role="form" method="post" id="loginForm" idAttr="{:U('Post/index')}">
+		  <div class="form-group">
+		    <label for="username" class="col-sm-2 control-label">Email/Username</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="username" name="username" placeholder="Email/Username" value="{:cookie('remember_me')}">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="password" class="col-sm-2 control-label">Password</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox" id="remember_me" name="remember" {:cookie('remember_me')?'checked="checked"':''}> Remember me
+		        </label>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10 submitBtn">
+		      <button type="submit" class="btn btn-primary">Sign in</button>
+		      <a href="{:U('Index/register')}" class="btn btn-warning">
+		      	<span class="glyphicon glyphicon-plane"></span> 没有帐号？
+		      </a>
+		    </div>
+		  </div>
+		</form>
+    	</div>
+    </div>
+</div>
+<script type="text/javascript" src="__ROOT__/js/login.js"></script>
+<include file="Public/footer" />

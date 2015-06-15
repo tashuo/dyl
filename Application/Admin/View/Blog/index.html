@@ -1,0 +1,43 @@
+<include file="Public/header" />
+
+<div class="container">
+    <div class="row">
+    	<div class="col-md-12">
+	<ul class="nav nav-tabs" role="tablist">
+    		<li role="presentation" class="{$blogListClass}"><a href="{:U('Blog/index')}">博客列表</a></li>
+		<li role="presentation" class="{$blogAddClass}"><a href="{:U('Blog/add')}">写博客</a></li>
+	</ul>
+	<div class="table-responsive">
+	    <table class="table table-hover">
+	        <tr class="success">
+	            <th>标题</th>
+	            <th>作者</th>
+	            <th>时间</th>
+	            <th>浏览数</th>
+	            <th>评论数</th>
+	            <th>操作</th>
+	        </tr>
+	        <foreach name="blogList" item="v">
+	            <tr>
+	        	    <td>{$v.subject}</td>
+	                <td>{$v.author}</td>
+	                <td>{$v.dateline|date='Y-m-d H:i:s',###}</td>
+	                <td>{$v.views}</td>
+	                <td>{$v.replies}</td>
+	                <td><a href="{:U('Blog/edit','vid='.$v[id])}" target="_blank">编辑</a> || 
+	                <eq name="v['state']" value="1">
+	                	<a href="{:U('Blog/delete')}" idAttr="{$v.id}" class="deleteProLink">删除</a>
+	                <else/>
+	                	<a href="{:U('Blog/undelete')}" idAttr="{$v.id}" class="undeleteProLink">恢复</a>
+	                </eq>
+	                </td>
+	            </tr>
+	        </foreach>
+	    </table>
+	</div>
+	<div align="center">{$page}</div>
+
+    	</div>
+    </div>
+</div>
+<include file="Public/footer" />

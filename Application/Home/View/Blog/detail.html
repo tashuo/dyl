@@ -1,0 +1,48 @@
+<include file="Public/header_out" title="{$blogInfo.subject}" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1 blogDetail">
+      <div class="blog_date">
+            <p class="text-center"><small>{$blogInfo.dateline|date='d, M',###}</small></p>
+      </div>
+      <div class="title">
+        <h1 class="text-center">{$blogInfo.subject}</h1>
+      </div>
+      <div class="content well">{$blogInfo.content}</div>
+      <div class="blog_meta">
+      	<p><a href="#replies">评论({$blogInfo.replies})</a><span  class="pull-right hot"> 热度({$blogInfo.views})</a></p>
+      </div>
+      <div class="blog_separate">&nbsp;</div>
+
+      <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="{$blogInfo.id}" data-title="{$blogInfo.subject}" data-url="{:U('Blog/detail', 'blogId='.$blogInfo[id])}"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"tashuojolin"};
+      	(function() {
+      		var ds = document.createElement('script');
+      		ds.type = 'text/javascript';ds.async = true;
+      		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      		ds.charset = 'UTF-8';
+      		(document.getElementsByTagName('head')[0] 
+      		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+      	})();
+      </script>
+      <!-- 多说公共JS代码 end -->
+
+      <div class="pageTip">
+        <ul class="pager">
+          <li class="previous">
+            <a href="{:U('Blog/detail', 'blogId='.$nextBlogId)}">← 前一篇</a>
+          </li>
+          <li class="next">
+            <a href="{:U('Blog/detail', 'blogId='.$preBlogId)}">后一篇 →</a>
+          </li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+<include file="Public/footer" />
